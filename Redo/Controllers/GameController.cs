@@ -12,7 +12,7 @@ namespace Redo.Controllers
         // GET: Game
         public ActionResult Index()
         {
-            Session["Answer"] = new Random().Next(1, 10);
+            Session["Answer"] = new Random().Next(10, 50);
 
             return View();
         }

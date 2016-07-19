@@ -16,7 +16,7 @@ namespace Redo.Models
 
         [Display(Name = "What is your guess?")]
         [Required(ErrorMessage = "Guess is Required")]
-        [Range(1, 10, ErrorMessage = "Guess Must be Between 1 and 20")]
+        [Range(10, 50, ErrorMessage = "Guess Must be Between 10 and 50")]
         public int Guess { get; set; }
 
         public override string ToString()
