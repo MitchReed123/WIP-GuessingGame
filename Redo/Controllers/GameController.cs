@@ -16,12 +16,18 @@ namespace Redo.Controllers
 
             return View();
         }
+        //old statement for GuessWasCorrect
+        //private bool GuessWasCorrect(int guess)
+        //{
+        //    return guess == (int)Session["Answer"];
+        //}
 
-        private bool GuessWasCorrect(int guess)
+
+        //Easier way to do the higher or lower.
+        private int GuessWasCorrect(int guess)
         {
-            return guess == (int)Session["Answer"];
+            return guess.CompareTo((int)Session["Answer"]);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
 
@@ -31,8 +37,22 @@ namespace Redo.Controllers
             {
                 ViewBag.Win = GuessWasCorrect(model.Guess);
             }
-
+            
             return View(model);
         }
+        // More difficult way to do the higher low 
+        //public int HighLow(int guess)
+        //{
+        //    if (guess == ViewBag.Win)
+        //    {
+        //        return 0;
+        //    }
+        //    if (guess < ViewBag.Win)
+        //    {
+        //        return -1;
+        //    }
+        //    return 1;
+        //}  
+
     }
 }

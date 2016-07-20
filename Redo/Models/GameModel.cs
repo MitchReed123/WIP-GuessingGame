@@ -19,6 +19,8 @@ namespace Redo.Models
         [Range(10, 50, ErrorMessage = "Guess Must be Between 10 and 50")]
         public int Guess { get; set; }
 
+        public string HighLow { get; set; }
+
         public override string ToString()
         {
             return $"{PlayerName} ({Guess})";
